@@ -4,7 +4,7 @@ matplotlib==3.5.3
 emoji==1.7.0
 langdetect==1.0.9
 nltk==3.8.1
-numpy==1.21.6
+numpy
 pandas==1.1.5
 seaborn==0.12.2
 afinn==0.1
