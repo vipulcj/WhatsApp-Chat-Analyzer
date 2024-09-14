@@ -9,6 +9,8 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from afinn import Afinn
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 def fetch_stats(selected_user, df):
     if selected_user == "Including all":
@@ -237,7 +239,7 @@ def readydf(selected_user, df):
         review = review.lower()
         review = review.split()
 
-        nltk.download('stopwords')
+        
 
         review = [lemmatizer.lemmatize(word) for word in review if not word in set(stopwords.words('english'))]
         return ' '.join(review)
