@@ -5,6 +5,7 @@ from string import punctuation
 from collections import Counter
 from langdetect import detect
 import re
+import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from afinn import Afinn
@@ -235,6 +236,9 @@ def readydf(selected_user, df):
         review = re.sub('[^a-zA-Z]', ' ', text)
         review = review.lower()
         review = review.split()
+
+        nltk.download('stopwords')
+
         review = [lemmatizer.lemmatize(word) for word in review if not word in set(stopwords.words('english'))]
         return ' '.join(review)
     
